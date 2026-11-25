@@ -19,7 +19,7 @@
   
   // Set a subtle volume (0.0 to 1.0) so it's not annoying
   if (bgMusic) {
-    bgMusic.volume = 0.3; 
+    bgMusic.volume = 0.1; 
   }
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

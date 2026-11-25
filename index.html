@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HAPPY BIRTHDAY, PALANGGING!</title>
+  <meta name="description" content="A little handmade birthday letter, sealed with a doodled heart." />
+  <meta name="theme-color" content="#D5A5F4" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 88 C20 62 8 40 22 24 C34 12 48 20 50 32 C52 20 66 12 78 24 C92 40 80 62 50 88 Z' fill='%23F6BBD8' stroke='%2359436F' stroke-width='4'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Patrick+Hand&family=Quicksand:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ====== Hand-drawn doodle library (referenced with <use>) ====== -->
+  <svg class="svg-defs" aria-hidden="true" focusable="false">
+    <defs>
+      <!-- doodle flower: outlined petals + yellow center + stem and leaves -->
+      <symbol id="d-flower" viewBox="0 0 140 220">
+        <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M70 218 C 65 184, 75 150, 70 116" />
+          <path d="M69 178 C 50 172, 38 156, 41 138 C 60 146, 68 160, 69 178 Z" />
+          <path d="M71 194 C 89 189, 100 173, 97 155 C 80 162, 73 175, 71 194 Z" />
+        </g>
+        <g stroke="currentColor" stroke-width="3" stroke-linejoin="round">
+          <ellipse cx="70" cy="44" rx="17" ry="27" fill="#E5C9F5" transform="rotate(0 70 76)" />
+          <ellipse cx="70" cy="44" rx="17" ry="27" fill="#E5C9F5" transform="rotate(60 70 76)" />
+          <ellipse cx="70" cy="44" rx="17" ry="27" fill="#E5C9F5" transform="rotate(120 70 76)" />
+          <ellipse cx="70" cy="44" rx="17" ry="27" fill="#E5C9F5" transform="rotate(180 70 76)" />
+          <ellipse cx="70" cy="44" rx="17" ry="27" fill="#E5C9F5" transform="rotate(240 70 76)" />
+          <ellipse cx="70" cy="44" rx="17" ry="27" fill="#E5C9F5" transform="rotate(300 70 76)" />
+        </g>
+        <circle cx="70" cy="76" r="13" fill="#FFE89A" stroke="currentColor" stroke-width="3" />
+      </symbol>
+
+      <!-- doodle smiley: wobbly circle, dash eyes, big arc smile -->
+      <symbol id="d-smiley" viewBox="0 0 100 100">
+        <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round">
+          <circle cx="50" cy="50" r="43" />
+          <path d="M39 35 c .5 5, .5 9, 0 14" />
+          <path d="M61 35 c -.5 5, -.5 9, 0 14" />
+          <path d="M30 60 C 38 74, 62 74, 70 60" />
+        </g>
+      </symbol>
+
+      <!-- small five-point star -->
+      <symbol id="d-star" viewBox="0 0 24 24">
+        <path d="M12 2 L14.6 8.6 L21.6 9.2 L16.2 13.8 L18 20.8 L12 17 L6 20.8 L7.8 13.8 L2.4 9.2 L9.4 8.6 Z" />
+      </symbol>
+
+      <!-- four-point sparkle -->
+      <symbol id="d-sparkle" viewBox="0 0 24 24">
+        <path d="M12 0 C 13 8, 16 11, 24 12 C 16 13, 13 16, 12 24 C 11 16, 8 13, 0 12 C 8 11, 11 8, 12 0 Z" />
+      </symbol>
+
+      <!-- heart (outline or filled via fill attr) -->
+      <symbol id="d-heart" viewBox="0 0 100 100">
+        <path d="M50 88 C 20 62, 8 40, 22 24 C 34 12, 48 20, 50 32 C 52 20, 66 12, 78 24 C 92 40, 80 62, 50 88 Z" />
+      </symbol>
+
+      <!-- hand-drawn curved arrow pointing to the letter -->
+      <symbol id="d-arrow" viewBox="0 0 160 120">
+        <g fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+          <path class="arrow-line" d="M150 106 C 154 82, 140 56, 116 40 C 98 28, 84 23, 70 19" />
+          <path class="arrow-head" d="M86 12 L69 19 L79 34" />
+        </g>
+      </symbol>
+
+      <!-- squiggle underline -->
+      <symbol id="d-squiggle" viewBox="0 0 90 12">
+        <path d="M2 8 Q 13 2, 24 7 T 46 7 T 68 7 T 88 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ====== INITIAL SCREEN — the greeting is already here ====== -->
+  <section class="hero" id="hero">
+
+    <!-- background doodles (like the reference: smileys peeking from corners, flowers at the sides) -->
+    <svg class="deco deco-smiley-1" aria-hidden="true" focusable="false"><use href="#d-smiley" /></svg>
+    <svg class="deco deco-smiley-2" aria-hidden="true" focusable="false"><use href="#d-smiley" /></svg>
+    <svg class="deco deco-smiley-3" aria-hidden="true" focusable="false"><use href="#d-smiley" /></svg>
+    <svg class="deco deco-smiley-4" aria-hidden="true" focusable="false"><use href="#d-smiley" /></svg>
+
+    <svg class="deco deco-flower-1" aria-hidden="true" focusable="false"><use href="#d-flower" /></svg>
+    <svg class="deco deco-flower-2" aria-hidden="true" focusable="false"><use href="#d-flower" /></svg>
+
+    <svg class="deco deco-star-1" aria-hidden="true" focusable="false"><use href="#d-star" /></svg>
+    <svg class="deco deco-star-2" aria-hidden="true" focusable="false"><use href="#d-star" /></svg>
+    <svg class="deco deco-sparkle-1" aria-hidden="true" focusable="false"><use href="#d-sparkle" /></svg>
+    <svg class="deco deco-sparkle-2" aria-hidden="true" focusable="false"><use href="#d-sparkle" /></svg>
+    <svg class="deco deco-heart-1" aria-hidden="true" focusable="false"><use href="#d-heart" /></svg>
+
+    <span class="tape tape-hero-a" aria-hidden="true"></span>
+    <span class="tape tape-hero-b" aria-hidden="true"></span>
+
+    <div class="hero-inner">
+      <header class="hero-greeting">
+        <!-- EDIT: her name in the greeting -->
+        <h1 class="greet">HAPPY BIRTHDAY,<br /><span class="greet-name">PALANGGING!</span></h1>
+        <p class="greet-sub">today is your special day!</p>
+        <p class="greet-tease">i have a little something for you...</p>
+      </header>
+
+      <div class="envelope-scene">
+        <button class="envelope" id="envelope" type="button" aria-label="Open your letter" aria-expanded="false">
+          <span class="env-back" aria-hidden="true"></span>
+          <span class="env-paper" aria-hidden="true">
+            <svg class="env-paper-heart" viewBox="0 0 100 100" focusable="false"><use href="#d-heart" /></svg>
+          </span>
+          <span class="env-pocket" aria-hidden="true">
+            <svg class="env-creases" viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+              <path d="M3 97 C 22 84, 37 72, 50 62 C 63 72, 78 84, 97 97" fill="none" />
+            </svg>
+          </span>
+          <span class="env-flap" aria-hidden="true">
+            <svg class="env-flap-fill" viewBox="0 0 100 58" preserveAspectRatio="none" focusable="false">
+              <path d="M2 2 L98 2 L52 54 Z" fill="#F7E9D0" />
+              <path d="M2 2 L98 2 L52 54 Z" fill="none" class="sketch-stroke" vector-effect="non-scaling-stroke" />
+            </svg>
+            <svg class="env-seal" viewBox="0 0 100 100" focusable="false"><use href="#d-heart" /></svg>
+          </span>
+          <span class="env-outline" aria-hidden="true">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+              <rect x="1.5" y="1.5" width="97" height="97" rx="5" fill="none" class="sketch-stroke" vector-effect="non-scaling-stroke" />
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      <div class="hint" id="hint">
+        <svg class="hint-arrow" aria-hidden="true" focusable="false"><use href="#d-arrow" /></svg>
+        <span class="hint-text">tap here to open!</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== THE LETTER ====== -->
+  <main class="letter-view" id="letter-view" hidden>
+    <div class="letter-paper">
+      <span class="tape tape-paper-a" aria-hidden="true"></span>
+      <span class="tape tape-paper-b" aria-hidden="true"></span>
+
+      <h2 class="letter-hi" id="letter-title" tabindex="-1">dear palangging,</h2>
+      <svg class="letter-squiggle" aria-hidden="true" focusable="false"><use href="#d-squiggle" /></svg>
+
+      <!-- EDIT: the message below is kept word for word -->
+      <p class="letter-p reveal">hiii, good morningggg, palangga! today is november 26, finally, your birthday! another year, another blessing from the higher being. HAPPY BIRTHDAY, PALANGGING! 💜</p>
+
+      <p class="letter-p reveal">first of all, thank you for always being there for me. bisag random kaayo ko, dili gyud ka mosugot nga dili nako i-share saimo akong problems and everything that's bothering me. thank you for being someone i can run to whenever things get overwhelming. i hope you know how much i appreciate that. alabyu, palangging!</p>
+
+      <!-- childhood memories, scrapbook composition -->
+      <figure class="duo reveal">
+        <div class="polaroid p-duo-a">
+          <span class="tape tape-sm-a" aria-hidden="true"></span>
+          <img src="assets/photo-1.jpg" alt="a little girl standing in front of an open refrigerator" width="720" height="960" loading="lazy" />
+        </div>
+        <div class="polaroid p-duo-b">
+          <span class="tape tape-sm-b" aria-hidden="true"></span>
+          <img src="assets/photo-2.jpg" alt="a little girl eating a snack outdoors" width="480" height="640" loading="lazy" />
+        </div>
+      </figure>
+
+      <p class="letter-p reveal">i honestly didn't expect that we would get to know each other this way. you're one of the most beautiful plot twists life has ever given me. even though we're still in the courting stage, you've already become someone who makes my days better. my nights would honestly feel boring without our random conversations. i'm really grateful that you are willing to spend your time talking to me, even when my stories and questions are so random HAHAHAHA.</p>
+
+      <!-- playful scrapbook moment -->
+      <figure class="solo reveal">
+        <div class="polaroid p-tilt-l">
+          <span class="tape tape-sm-b" aria-hidden="true"></span>
+          <img src="assets/photo-3.jpg" alt="a close-up photo of a girl making a funny face" width="900" height="1200" loading="lazy" />
+        </div>
+      </figure>
+
+      <p class="letter-p reveal">and honestly, i'm still amazed by the kind of person you are. there's so much about you that i didn't expect, and i'm glad i got the chance to know those little things about you. i hope i get to discover more of you as time goes by.</p>
+
+      <p class="letter-p reveal">there are so many things i wish i could do and say in person. those sweet messages i send you? i genuinely wish i could tell you all of those face-to-face. it's just that you're so far away, and if only distance weren't a problem, i would've wanted to show you those things personally. i don't want you to think that i'm only good at saying sweet things through chats. i want my actions to speak for themselves, too. i want you to feel the sincerity behind every word and effort.</p>
+
+      <p class="letter-p reveal">also, i hope you always remember that you're my favorite. not because i have to say it, but because that's genuinely how i feel. i want you to know that my intentions towards you are real and sincere. i'm not just saying these things for the sake of making you happy or hearing sweet words from you in return. i genuinely appreciate you, and everything i'm showing you comes from a sincere place. i don't know what the future holds for us, but one thing i want you to be certain of is that i'm being genuine with you. i hope i can show you that through my consistency, efforts, and actions, not just through words.</p>
+
+      <p class="letter-p reveal">on your special day, i hope life gives you more reasons to smile, more opportunities to grow, and all the happiness your heart deserves. i hope you never forget how appreciated and valued you are. you deserve good things, palangga, and i hope this new chapter of your life brings you nothing but beautiful experiences.</p>
+
+      <!-- a printed memory near the ending -->
+      <figure class="solo reveal">
+        <div class="polaroid p-film">
+          <span class="tape tape-sm-a" aria-hidden="true"></span>
+          <img src="assets/photo-4.jpg" alt="two nearly identical portraits of a girl, stacked like a film strip" width="900" height="1125" loading="lazy" />
+        </div>
+      </figure>
+
+      <p class="letter-p reveal">once again, HAPPY BIRTHDAY, PALANGGING! i'm really glad our paths crossed, and i hope i get to celebrate more birthdays with you in the years to come.</p>
+
+      <p class="letter-p reveal">alabyuuuuuuyyyy!!! 💜</p>
+
+      <!-- EDIT: handwritten sign-off -->
+      <p class="letter-sign reveal">— your palangga</p>
+      <svg class="paper-doodle" aria-hidden="true" focusable="false"><use href="#d-flower" /></svg>
+    </div>
+
+    <!-- ====== FINAL PAGE ====== -->
+    <section class="finale reveal">
+      <svg class="deco fin-smiley" aria-hidden="true" focusable="false"><use href="#d-smiley" /></svg>
+      <svg class="deco fin-flower-1" aria-hidden="true" focusable="false"><use href="#d-flower" /></svg>
+      <svg class="deco fin-flower-2" aria-hidden="true" focusable="false"><use href="#d-flower" /></svg>
+      <svg class="deco fin-star-1" aria-hidden="true" focusable="false"><use href="#d-star" /></svg>
+      <svg class="deco fin-sparkle-1" aria-hidden="true" focusable="false"><use href="#d-sparkle" /></svg>
+      <svg class="deco fin-heart" aria-hidden="true" focusable="false"><use href="#d-heart" /></svg>
+      <span class="tape tape-fin" aria-hidden="true"></span>
+
+      <h2 class="finale-title">HAPPY BIRTHDAY,<br />PALANGGING!</h2>
+      <p class="finale-msg">may your days always be filled with happiness and beautiful memories.</p>
+      <p class="finale-alabyu">alabyuuuuuuyyyy!!!</p>
+      <svg class="finale-squiggle" aria-hidden="true" focusable="false"><use href="#d-squiggle" /></svg>
+
+      <button class="read-again" id="read-again" type="button">read again</button>
+    </section>
+  </main>
+
+  <!-- graceful fallback: without JavaScript, show the letter directly -->
+  <noscript>
+    <style>
+      #hero { display: none; }
+      #letter-view[hidden] { display: block; }
+      #letter-view { opacity: 1 !important; transform: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+</body>
+</html>
